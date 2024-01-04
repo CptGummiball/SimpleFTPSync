@@ -1,0 +1,29 @@
+# Config file for SimpleFTPSync
+
+sync-interval: 300  # Synchronizations interval in seconds
+local-path: "path/to/local/folder" # Path to local folder
+sync-type: "FTP" # Synchronization type (FTP or SFTP)
+
+# FTP server configuration
+ftp:
+  server: "ftp.example.com"
+  port: 21
+  username: "your-ftp-username"
+  password: "your-ftp-password"
+  remote-path: "/path/on/ftp/server"
+
+# SFTP server configuration
+sftp:
+  server: "sftp.example.com"
+  port: 22
+  username: "your-sftp-username"
+  password: "your-sftp-password"
+  remote-path: "/path/on/sftp/server"
+
+# List of folders to synchronize
+sync-folders:
+  - local-path: "plugins/YourPluginName/folder1"
+    remote-path: "/remote/folder1"
+  - local-path: "world"
+    remote-path: "/remote/folder2"
+    # Add more folders as needed
