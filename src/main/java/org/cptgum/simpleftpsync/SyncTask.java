@@ -15,7 +15,7 @@ public class SyncTask extends BukkitRunnable {
 
     @Override
     public void run() {
-        String syncType = plugin.getPluginConfig().getString("synctype");
+        String syncType = plugin.getPluginConfig().getString("sync-type");
 
         assert syncType != null;
         if (syncType.equalsIgnoreCase("FTP")) {
