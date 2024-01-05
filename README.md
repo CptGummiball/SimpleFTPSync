@@ -37,6 +37,7 @@ sftp:
   username: "your-sftp-username"
   password: "your-sftp-password"
   remote-path: "/path/on/sftp/server"
+  StrictHostKeyChecking: "yes" # Set to "yes" or "no" to enable or disable strict host key checking (not recommended)
 
 ````
 ##### FTPS Server Configuration
