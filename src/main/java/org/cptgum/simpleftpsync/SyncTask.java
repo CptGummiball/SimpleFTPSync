@@ -22,6 +22,8 @@ public class SyncTask extends BukkitRunnable {
             performFTPUpload();
         } else if (syncType.equalsIgnoreCase("SFTP")) {
             performSFTPUpload();
+        } else if (syncType.equalsIgnoreCase("FTPS")) {
+            performFTPSUpload();
         } else {
             System.out.println("Unrecognized sync type in config.yml");
         }
@@ -66,6 +68,29 @@ public class SyncTask extends BukkitRunnable {
                     SFTPUtil.uploadFile(server, port, user, pass, remotePath, localPath);
                 } catch (IOException | SftpException | JSchException e) {
                     Bukkit.getLogger().warning("Failed to upload file: " + e.getMessage());
+                }
+            }
+        } else {
+            System.out.println("No sync-folders configured in config.yml");
+        }
+    }
+
+    private void performFTPSUpload() {
+        String server = plugin.getPluginConfig().getString("ftps.server");
+        int port = plugin.getPluginConfig().getInt("ftps.port");
+        String user = plugin.getPluginConfig().getString("ftps.username");
+        String pass = plugin.getPluginConfig().getString("ftps.password");
+
+        ConfigurationSection syncFolders = plugin.getPluginConfig().getConfigurationSection("sync-folders");
+        if (syncFolders != null) {
+            for (String key : syncFolders.getKeys(false)) {
+                String localPath = syncFolders.getString(key + ".local-path");
+                String remotePath = syncFolders.getString(key + ".remote-path");
+
+                try {
+                    FTPSUtil.uploadFile(server, port, user, pass, remotePath, localPath);
+                } catch (IOException e) {
+                    Bukkit.getLogger().warning("Failed to upload file via FTPS: " + e.getMessage());
                 }
             }
         } else {

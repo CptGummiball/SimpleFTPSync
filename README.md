@@ -1,6 +1,6 @@
 # SimpleFTPSync Plugin
 ## Overview
-SimpleFTPSync is a Bukkit/Spigot plugin designed for easy and flexible synchronization of folders using either FTP or SFTP protocols. This plugin allows you to synchronize specific folders on your server with remote servers, providing a convenient way to manage and update content.
+SimpleFTPSync is a Bukkit/Spigot plugin designed for easy and flexible synchronization of folders using either FTP, SFTP or FTPS protocols. This plugin allows you to synchronize specific folders on your server with remote servers, providing a convenient way to manage and update content.
 
 ## USAGE
 
@@ -19,7 +19,7 @@ SimpleFTPSync is a Bukkit/Spigot plugin designed for easy and flexible synchroni
 
 -   `sync-interval`: Synchronization interval in seconds.
 -   `local-path`: Path to the local folder you want to synchronize.
--   `sync-type`: Synchronization type (FTP or SFTP).
+-   `sync-type`: Synchronization type (FTP, SFTP or FTPS).
 ##### FTP Server Configuration
 ````
 ftp:
@@ -38,6 +38,15 @@ sftp:
   password: "your-sftp-password"
   remote-path: "/path/on/sftp/server"
 
+````
+##### FTPS Server Configuration
+````
+ftps:
+  server: "ftps.example.com"
+  port: 21
+  username: "your-ftps-username"
+  password: "your-ftps-password"
+  remote-path: "/path/on/ftps/server"
 ````
 ##### List of Folders to Synchronize
 ````
