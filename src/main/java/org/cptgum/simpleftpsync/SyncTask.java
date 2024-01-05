@@ -57,6 +57,7 @@ public class SyncTask extends BukkitRunnable {
         int port = plugin.getPluginConfig().getInt("sftp.port");
         String user = plugin.getPluginConfig().getString("sftp.username");
         String pass = plugin.getPluginConfig().getString("sftp.password");
+        String shkc = plugin.getPluginConfig().getString("sftp.StrictHostKeyChecking");
 
         ConfigurationSection syncFolders = plugin.getPluginConfig().getConfigurationSection("sync-folders");
         if (syncFolders != null) {
@@ -65,7 +66,7 @@ public class SyncTask extends BukkitRunnable {
                 String remotePath = syncFolders.getString(key + ".remote-path");
 
                 try {
-                    SFTPUtil.uploadFile(server, port, user, pass, remotePath, localPath);
+                    SFTPUtil.uploadFile(server, port, user, pass, shkc, remotePath, localPath);
                 } catch (IOException | SftpException | JSchException e) {
                     Bukkit.getLogger().warning("Failed to upload file: " + e.getMessage());
                 }
