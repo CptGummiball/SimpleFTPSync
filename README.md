@@ -64,14 +64,14 @@ sync-folders:
 -   `/sfs reload`: Reloads the configuration. (Permission: `syncfolder.reload`)
 
 ## FAQ
-- Q: How do I troubleshoot synchronization issues?
-  - A: Check the server logs for error messages. Ensure that the server and FTP/SFTP/FTPS configurations are accurate.
+#### How do I troubleshoot synchronization issues?
+*Check the server logs for error messages. Ensure that the server and FTP/SFTP/FTPS configurations are accurate.*
 
-- Q: I get the error `com.jcraft.jsch.JSchException: Algorithm negotiation fail` in the console
-  - A: Please see [here](https://github.com/CptGummiball/SimpleFTPSync/blob/main/Algorithm%20negotiation%20fail.md) for more information and use FTPS instead of SFTP
+#### I get the error `com.jcraft.jsch.JSchException: Algorithm negotiation fail` in the console
+*Please see [here](https://github.com/CptGummiball/SimpleFTPSync/blob/main/Algorithm%20negotiation%20fail.md) for more information and use FTPS instead of SFTP*
 
-- Q: I get the error `org.apache.commons.net.MalformedServerReplyException: Could not parse response code Reply: SSH-2.0-Go` in the console
-  - A: Ensure that you're connecting to the correct type of server. For example, if you're expecting an FTP server, make sure you are connecting to an FTP server and not an SSH server.
+#### I get the error `org.apache.commons.net.MalformedServerReplyException: Could not parse response code Reply: SSH-2.0-Go` in the console
+*Ensure that you're connecting to the correct type of server. For example, if you're expecting an FTP server, make sure you are connecting to an FTP server and not an SSH server.*
 
 ## Issues
 If you encounter any issues or have suggestions, please [create a new issue](https://github.com/CptGummiball/SimpleFTPSync/issuess).
@@ -79,5 +79,4 @@ If you encounter any issues or have suggestions, please [create a new issue](htt
 ## Credits
 Author: CptGummiball
 
-## License
-This plugin is licensed under the MIT License - see the [LICENSE](https://github.com/CptGummiball/SimpleFTPSync/blob/main/LICENSE) file for details.
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)]([https://choosealicense.com/licenses/mit/](https://github.com/CptGummiball/SimpleFTPSync/blob/main/LICENSE))
