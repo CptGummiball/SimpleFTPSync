@@ -63,6 +63,9 @@ sync-folders:
 
 -   `/sfs reload`: Reloads the configuration. (Permission: `syncfolder.reload`)
 
+## API
+[API Documentation](https://github.com/CptGummiball/SimpleFTPSync/blob/main/API.md)
+
 ## FAQ
 #### How do I troubleshoot synchronization issues?
 *Check the server logs for error messages. Ensure that the server and FTP/SFTP/FTPS configurations are accurate.*
