@@ -32,3 +32,6 @@ libraryDependencies += "org.cptgum" % "SimpleFTPSync" % "1.1"
 ````
 [org.cptgum/SimpleFTPSync "1.1"]
 ````
+
+## JAVADOCS
+https://cptgummiball.github.io/SimpleFTPSync/
